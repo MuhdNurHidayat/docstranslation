@@ -1,0 +1,28 @@
+@font-face{
+	font-family: 'Noto Kufi Arabic';
+	font-style: normal;
+	font-weight: 400;
+	src:url("../fonts/Noto-Sans-Kufi-regular/Noto-Sans-Kufi-regular.eot");
+	src:url("../fonts/Noto-Sans-Kufi-regular/Noto-Sans-Kufi-regular.eot?#iefix") format('embedded-opentype'),
+		local("Noto Sans Kufi Arabic"),
+		local("Noto-Sans-Kufi-Arabic-regular"),
+		local("Noto Kufi Arabic"),
+		local("Noto-Kufi-Arabic-regular"),
+		url("../fonts/Noto-Sans-Kufi-regular/Noto-Sans-Kufi-regular.woff2") format('woff2'),
+		url("../fonts/Noto-Sans-Kufi-regular/Noto-Sans-Kufi-regular.woff") format('woff'),
+		url("../fonts/Noto-Sans-Kufi-regular/Noto-Sans-Kufi-regular.ttf") format('truetype');
+}
+@font-face{
+	font-family: 'Noto Kufi Arabic';
+	font-style: normal;
+	font-weight: 700;
+	src:url("../fonts/Noto-Sans-Kufi-700/Noto-Sans-Kufi-700.eot");
+	src:url("../fonts/Noto-Sans-Kufi-700/Noto-Sans-Kufi-700.eot?#iefix") format('embedded-opentype'),
+		local("Noto Sans Kufi Arabic Bold"),
+		local("Noto-Sans-Kufi-Arabic-700"),
+		local("Noto Kufi Arabic Bold"),
+		local("Noto-Kufi-Arabic-700"),
+		url("../fonts/Noto-Sans-Kufi-700/Noto-Sans-Kufi-700.woff2") format('woff2'),
+		url("../fonts/Noto-Sans-Kufi-700/Noto-Sans-Kufi-700.woff") format('woff'),
+		url("../fonts/Noto-Sans-Kufi-700/Noto-Sans-Kufi-700.ttf") format('truetype');
+}
