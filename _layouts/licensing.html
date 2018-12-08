@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		{% if page.lang == "ms" %}
+		<title>{{ page.title | default: "License" }}{% if page.translatedtitle %} &#124; {{ page.translatedtitle | default: "Lesen" }}{% endif %}</title>
+		{% elsif page.lang == "ms-Arab" %}
+		<title>{{ page.title | default: "License" }}{% if page.translatedtitle %} &#124; &#x202b;{{ page.translatedtitle | default: "ليسين" }}{% endif %}</title>
+		{% else %}
+		<title>{{ page.title | default: "License" }}</title>
+		{% endif %}
+		{% seo title=false %}
+		
+		<link rel="stylesheet" href="{{ "/assets/css/styletr.css?v=" | append: site.github.build_revision | relative_url }}">
+		
+		<!--[if lt IE 9]>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<![endif]-->
+		
+		{% if page.title contains "GNU" %}
+		<!--[if IE]><link rel="shortcut icon" href="/assets/img/gnu.ico"><![endif]-->
+		<link rel="apple-touch-icon-precomposed" href="/assets/img/gnu.png">
+		<link rel="icon" href="/assets/img/gnu.png">
+		{% endif %}
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<blockquote>
+					<p lang="en"{% if page.title contains "GNU" %} class="leftside"><img src="/assets/img/gnu-72px.png" alt="GNU Logo" style="float:right;"/>{% else %}>{% endif %}This is an unofficial translation of the {{ page.title | default: "license" }} into {% if page.lang == "ms" %}Malay{% elsif page.lang == "ms-Arab" %}Malay in Jawi script{% else %}some language{% endif %}. It {% if page.org %}was not published by the {{ page.org | default: "owner" }}, and {% endif %}does not legally state the distribution terms for software that uses the {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %}—only the {% if page.linkback %}<a href="{{page.linkback}}" title="{{page.title}}">{% endif %}original English text of the {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %}{% if page.linkback %}</a>{% endif %} does that. However, we hope that this translation will help {% if page.lang == "ms" %}Malay speakers{% elsif page.lang == "ms-Arab" %}Malay speakers who only read Jawi script{% else %}some language speakers{% endif %} understand the {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} better.</p>
+					
+					{% if page.lang == "ms" %}
+					<p{% if page.logo %} class="leftside"><img src="/assets/img{{ page.logo | relative_url }}" alt="{{ page.title | default: "Logo" }}" style="float:right;"/>{% else %}>{% endif %}Ini ialah terjemahan tidak rasmi {{ page.title | default: "license" }} {% if page.translatedtitle %}({{ page.translatedtitle | default: "lesen" }}){% endif %} dalam bahasa Melayu. Terjemahan ini {% if page.org %}bukannya diterbitkan oleh {{ page.org | default: "pemiliknya" }}, dan ia {% endif %}tidak menyatakan terma-terma pengagihan yang sah untuk perisian yang menggunakan {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} — hanya kandungan asal {% if page.linkback %}<a href="{{page.linkback}}" title="{{page.title}}">{% endif %}{% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} dalam bahasa Inggeris{% if page.linkback %}</a>{% endif %} yang sah digunapakai. Namun begitu, kami berharap terjemahan ini mampu membantu penutur bahasa Melayu untuk memahami {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} dengan lebih baik.</p>
+					{% elsif page.lang == "ms-Arab" %}
+					<p class="tulisanjawi{% if page.logo %} leftside"><img src="/assets/img{{ page.logo | relative_url }}" alt="{{ page.title | default: "Logo" }}" class="leftside"/>{% else %}">{% endif %}اين اياله ترجمهن تيدق راسمي {{ page.title | default: "license" }} {% if page.translatedtitle %}({{ page.translatedtitle | default: "ليسين" }}){% endif %} دالم بهاس ملايو برتوليسن جاوي. ترجمهن اين {% if page.org %}بوكنڽ دتربيتكن اوليه {{ page.org | default: "ڤميليكڽ" }}، دان اي {% endif %}تيدق مڽاتاكن ترم٢ ڤڠاڬيهن يڠ صح اونتوق ڤرايسين يڠ مڠڬوناكن {% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} — هاڽ كندوڠن اصل {% if page.linkback %}<a href="{{page.linkback}}" title="{{page.title}}">{% endif %}{% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} دالم بهاس ايڠڬريس{% if page.linkback %}</a>{% endif %} يڠ صح دڬوناڤكاي. نامون بڬيتو، كامي برهارڤ ترجمهن اين ممڤو ممبنتو ڤنوتور بهاس ملايو يڠ ممباچ توليسن جاوي اونتوق ممهمي{% if page.abbr %}{{ page.abbr | default: "LCS" }}{% else %}{{page.title}}{% endif %} دڠن لبيه باءيق.</p>
+					{% else %}
+					<p{% if page.logo %} class="leftside"><img src="/assets/img{{ page.logo | relative_url }}" alt="{{ page.title | default: "Logo" }}" style="float:right;"/>{% else %}>{% endif %}Broken language tag.</p>
+					{% endif %}
+				</blockquote>
+		
+				{% if page.title contains "GNU" %}
+				<br>
+				<blockquote>
+					<p lang="en">You may publish this translation, modified or unmodified, only under the terms at <br><a href="http://www.gnu.org/licenses/translations.html">http://www.gnu.org/licenses/translations.html</a>.</p>
+					{% if page.lang == "ms" %}
+					<p>Anda boleh menerbitkan terjemahan ini, dengan atau tanpa perubahan, hanya di bawah terma-terma yang dinyatakan di <br><a href="http://www.gnu.org/licenses/translations.html">http://www.gnu.org/licenses/translations.html</a>.</p>
+					{% elsif page.lang == "ms-Arab" %}
+					<p class="tulisanjawi">اندا بوليه منربيتكن ترجمهن اين، دڠن اتاو تنڤا ڤروبهن، هاڽ د باوه ترم٢ يڠ دڽاتاكن د<br><a href="http://www.gnu.org/licenses/translations.html">http://www.gnu.org/licenses/translations.html</a>.</p>
+					{% else %}
+					<p>Broken language tag.</p>
+					{% endif %}
+				</blockquote>
+				{% endif %}
+			</header>
+			<section>
+				{% if page.lang == "ms-Arab" %}<div class="tulisanjawi">{% endif %}
+				{{ content }}
+				{% if page.lang == "ms-Arab" %}</div>{% endif %}
+			</section>
+			<footer>
+				<hr>
+				{% if page.lang == "ms" %}
+					{% if page.author %}<p>Diterjemah oleh: {{ page.author }}{% if page.email %} &#60;{{ page.email }}&#62;{% endif %}</p>{% endif %}
+					{% if page.date %}<p>Kemaskini terakhir: {{ page.date }} M ({{ page.hijrah }} H)</p>{% endif %}
+				{% elsif page.lang == "ms-Arab" %}
+					{% if page.author %}<p class="tulisanjawi">دترجمه اوليه: {{ page.author }}{% if page.email %} &#60;{{ page.email }}&#62;{% endif %}</p>{% endif %}
+					{% if page.date %}<p class="tulisanjawi">كمسكيني تراخير: {{ page.date }} ميلادية ({{ page.hijrah }} هجرية)</p>{% endif %}
+					<blockquote>
+					<p lang="en">NOTICE: Do not attempt to use online translator on this page. Most online translator only supports Malay language written in Rumi script (based on Latin), they would not correctly detect the Malay text written in the older but still in-use Jawi script (based on Arabic), which is the one used on this page. These online translators will assume the text on this page as Arabic or Persian which results in wrong translation.</p>
+					<p class="tulisanjawi" title="NOTIS: Jangan cuba guna penterjemah dalam talian di halaman ini. Kebanyakan penterjemah dalam talian hanya menyokong bahasa Melayu bertulisan Rumi, mereka tidak akan mengesan teks bahasa Melayu yang ditulis dalam tulisan Jawi yang lebih lama tetapi masih digunakan, yang digunakan di halaman ini. Penterjemah dalam talian ini akan menganggap teks di sini sebagai bahasa Arab atau bahasa Parsi dan memberikan terjemahan yang salah.">نوتيس: جاڠن چوبا ڬونا ڤنترجمه دالم تالين د هلامن اين. كبڽقان ڤنترجمه دالم تالين هاڽ مڽوكوڠ بهاس ملايو برتوليسن رومي، مريك تيدق اكن مڠسن تيكس بهاس ملايو يڠ دتوليس دالم توليسن جاوي يڠ لبيه لاما تتاڤي ماسيه دڬوناكن، يڠ دڬوناكن د هلامن اين. ڤنترجمه دالم تالين اين اكن مڠڠڬڤ تيكس د سيني سباڬاي بهاس عرب اتاو بهاس ڤرسي دان ممبريكن ترجمهن يڠ ساله.</p>
+					</blockquote>
+				{% else %}
+					{% if page.author %}<p>Translated by: {{ page.author }}{% if page.email %} &#60;{{ page.email }}&#62;{% endif %}</p>{% endif %}
+					{% if page.date %}<p>Last updated: {{ page.date }}</p>{% endif %}
+				{% endif %}
+			</footer>
+		</div>
+		<script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+	</body>
+</html>

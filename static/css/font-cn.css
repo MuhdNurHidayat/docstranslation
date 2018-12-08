@@ -1,0 +1,16 @@
+ @font-face {
+   font-family: 'Noto Sans SC';
+   font-style: normal;
+   font-weight: 400;
+   src: local('Noto Sans SC Regular'),
+        local('NotoSansSC-Regular'),
+        local('Noto Sans S Chinese Regular'),
+        local('NotoSansSChinese-Regular'),
+        url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff2) format('woff2'),
+        url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.woff) format('woff'),
+        url(//fonts.gstatic.com/ea/notosanssc/v1/NotoSansSC-Regular.otf) format('opentype'),
+		local('Noto Sans CJK Regular'),
+		local('NotoSansCJK-Regular'),
+		local('Source Hans Sans Regular'),
+		local('SourceHansSans-Regular');
+ }

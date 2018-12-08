@@ -1,0 +1,24 @@
+# Site settings
+title: unofficial.MNH48.moe
+description: >-
+    Unofficial translations by muhdnurhidayat MNH48.
+twitter_username: mnh48com
+github_username: MuhdNurHidayat
+
+# Other settings
+exclude:
+    - README.md
+    - Gemfile
+    - Gemfile.lock
+    
+include:
+    - favicon.png
+    - favicon.ico
+    - download/
+
+muhdnurhidayat:
+    picture: https://www.gravatar.com/avatar/64a9a0c5da22e761316957ae436b6281.png?s=200
+    twitter: mnh48com
+    
+plugins:
+  - jekyll-seo-tag
