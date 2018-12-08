@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: "en" }}"{% if page.lang == "ms-Arab" %} dir="rtl"{% endif %}>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#ff80ff">
+		<meta name="apple-mobile-web-app-status-bar-style" content="#ff80ff">
+		<meta name="msapplication-navbutton-color" content="#ff80ff">
+		{% if page.keywords %}<meta name="keywords" content="{{page.keywords}}">{% endif %}
+		<meta name="dcterms.created" content="{{page.date}}">
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@mnh48com">
+		<meta name="twitter:url" content="https://unofficial.mnh48.moe{{page.url}}">
+		<meta name="twitter:title" content="{{page.title}}">
+		<meta name="twitter:description" content="{{page.description}}">
+        {% if page.titlews %}<meta name="twitter:image" content="{{page.titlews}}.png">
+        {% else %}<meta name="twitter:image" content="/img/mnh48moe-164.png">{% endif %}
+		{% seo title=false %}
+		<title>{{page.title}}</title>
+		<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+		<link rel="icon" sizes="164x164" href="/img/mnh48moe-164.png" type="image/png" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+		
+		<!--[if lt IE 9]> <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script> <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script> <![endif]-->
+		<script async src="/static/js/modernizr-custom.js"></script>
+		<script async src="/static/js/jquery.min.js"></script>
+		<link rel="stylesheet" href="{{ "/static/css/main.css" | relative_url }}">
+		{% if page.lang == "ja" %}<link rel="stylesheet" href="{{ "/static/css/font-ja.css" | relative_url }}">{% endif %}
+        {% if page.titlews %}<link rel="stylesheet" href="{{ "/static/css/font-ja.css" | relative_url }}">{% endif %}
+		{% if page.lang == "zh-Hans" %}<link rel="stylesheet" href="{{ "/static/css/font-cn.css" | relative_url }}">{% endif %}
+		{% if page.lang == "zh-Hant" %}<link rel="stylesheet" href="{{ "/static/css/font-tw.css" | relative_url }}">{% endif %}
+		{% if page.lang == "ms-Arab" %}<link rel="stylesheet" href="{{ "/static/css/font-ar.css" | relative_url }}">{% endif %}
+		<link rel="stylesheet" href="{{ "/static/css/font-en.css" | relative_url }}">
+		<link rel="stylesheet" href="{{ "/static/css/style.css" | relative_url }}">
+	</head>
+	<body itemscope itemtype="https://schema.org/WebPage">
+		<div id="nav-placeholder"></div>
+		<nav id="nav">
+			{% if page.lang == "ms" %}
+			<ul class="container">
+				<li><a data-scroll href="/ms/index.html"{% if page.url == "/ms/" %} class="selected"{% endif %}>Laman Utama</a></li>
+				<li><a href="https://ms.mnh48.com/">Laman Peribadi</a></li>
+				<li><a href="https://mt.mnh48.com/search/label/Bahasa%20Melayu">Minetest!!!</a></li>
+				<li><a href="/ms/support/index.html"{% if page.url == "/ms/support/" %} class="selected"{% endif %}>Bantu Saya</a></li>
+			</ul>
+			{% elsif page.lang == "ms-Arab" %}
+			<ul class="container tulisanjawi">
+				<li><a data-scroll href="/ms-Arab/index.html"{% if page.url == "/ms-Arab/" %} class="selected"{% endif %}>لامن اوتام</a></li>
+				<li><a href="https://jawi.mnh48.com/">لامن ڤريبادي</a></li>
+				<li><a href="https://mt.mnh48.com/search/label/%D8%A8%D9%87%D8%A7%D8%B3%20%D9%85%D9%84%D8%A7%D9%8A%D9%88">ماءينتيست!!!</a></li>
+				<li><a href="/ms-Arab/support/index.html"{% if page.url == "/ms-Arab/support/" %} class="selected"{% endif %}>بنتو ساي</a></li>
+			</ul>
+			{% elsif page.lang == "ja" %}
+			<ul class="container">
+				<li><a data-scroll href="/ja/index.html"{% if page.url == "/ja/" %} class="selected"{% endif %}>ホームページ</a></li>
+				<li><a href="https://ja.mnh48.com/">個人のウェブサイト</a></li>
+				<li><a href="https://mt.mnh48.com/search/label/日本語">マインテスト！！！</a></li>
+				<li><a href="/ja/support/index.html"{% if page.url == "/ja/support/" %} class="selected"{% endif %}>寄付する</a></li>
+			</ul>
+			{% elsif page.lang == "zh-Hans" %}
+			<ul class="container">
+				<li><a data-scroll href="/zh-Hans/index.html"{% if page.url == "/zh-Hans/" %} class="selected"{% endif %}>首页</a></li>
+				<li><a href="https://zh.mnh48.com/">个人网站·</a></li>
+				<li><a href="https://mt.mnh48.com/search/label/中文">试采世界！！！</a></li>
+				<li><a href="/zh-Hans/support/index.html"{% if page.url == "/zh-Hans/support/" %} class="selected"{% endif %}>捐助</a></li>
+			</ul>
+			{% else %}
+			<ul class="container">
+				<li id="top-home"><a data-scroll href="/en/index.html"{% if page.url == "/en/" %} class="selected"{% endif %}>Home</a></li>
+				<li id="top-website"><a href="https://en.mnh48.com/">Personal Website</a></li>
+				<li id="top-minetest"><a href="https://mt.mnh48.com/search/label/English">Minetest!!!</a></li>
+				<li id="top-support"><a href="/en/support/index.html"{% if page.url == "/en/support/" %} class="selected"{% endif %}>Support Me</a></li>
+			</ul>
+			{% endif %}
+		</nav>
+		<div id="landing_container">
+			<canvas id="l_canvas"></canvas>
+			<div id="landing">
+				<header>
+					<h1>{{page.title}}</h1>
+					<p> {{page.description}} </p>
+					<ul class="lang-sel">
+						{% if page.lang == "ms" %}
+                            {% if page.enlink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.enlink}}" title="Baca dalam bahasa Inggeris" lang="en" itemprop="name"> ENGLISH </a>
+                            </li>{% endif %}
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.ms.html" title="Baca dalam tulisan rumi" lang="ms" class="disabled" itemprop="name"> BAHASA MELAYU </a>
+                            </li>
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.jawi.html" title="Baca dalam tulisan jawi" lang="ms-Arab" itemprop="name"> بهاس ملايو </a>
+                            </li>
+                            {% if page.jalink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.jalink}}" title="Baca dalam bahasa Jepun" lang="ja" itemprop="name"> 日本語 </a>
+                            </li>{% endif %}
+						{% elsif page.lang == "ms-Arab" %}
+                            {% if page.enlink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.enlink}}" title="باچ دالم بهاس ايڠڬريس" lang="en" itemprop="name"> ENGLISH </a>
+                            </li>{% endif %}
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.ms.html" title="باچ دالم توليسن رومي" lang="ms" itemprop="name"> BAHASA MELAYU </a>
+                            </li>
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.jawi.html" title="باچ دالم توليسن جاوي" lang="ms-Arab" class="disabled" itemprop="name"> بهاس ملايو </a>
+                            </li>
+                            {% if page.jalink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.jalink}}" title="باچ دالم بهاس جڤون" lang="ja" itemprop="name"> 日本語 </a>
+                            </li>{% endif %}
+                        {% elsif page.lang == "ja" %}
+                            {% if page.enlink}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.enlink}}" title="英語で読む" lang="en" itemprop="name"> ENGLISH </a>
+                            </li>{% endif %}
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.ms.html" title="ローマ字のマレー語で読む" lang="ms"　itemprop="name"> BAHASA MELAYU </a>
+                            </li>
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.jawi.html" title="ジャウィ字のマレー語で読む" lang="ms-Arab" itemprop="name"> بهاس ملايو </a>
+                            </li>
+                            {% if page.jalink == true %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.jalink}}" title="日本語で読む" lang="ja" class="disabled" itemprop="name"> 日本語 </a>
+                            </li>{% endif %}
+						{% else %}
+                            {% if page.enlink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.enlink}}" title="Read in English" lang="en" class="disabled" itemprop="name"> ENGLISH </a>
+                            </li>{% endif %}
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.ms.html" title="Read in Malay (Rumi)" lang="ms" itemprop="name"> BAHASA MELAYU </a>
+                            </li>
+                            <li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.titlews}}.jawi.html" title="Read in Malay (Jawi)" lang="ms-Arab" itemprop="name"> بهاس ملايو </a>
+                            </li>
+                            {% if page.jalink %}<li itemprop="availableLanguage" itemscope itemtype="https://schema.org/Language">
+                                <a href="{{page.jalink}}" title="Read in Japanese" lang="ja" itemprop="name"> 日本語 </a>
+                            </li>{% endif %}
+						{% endif %}
+					</ul>
+				</header>
+			</div>
+		</div>
+		<main lang="{{page.lang|default:"en"}}">
+			<article>
+				{{ content }}
+			</article>
+		</main>
+		
+		<footer>
+		{% if page.lang == "ms" %}
+		<ul>
+			<li>&copy; MNH48.moe 2012 - 2018</li>
+			<li><a href="https://ms.mnh48.com/">Laman Peribadi</a></li>
+			<li><a href="https://github.com/MuhdNurHidayat/">GitHub</a></li>
+			<li><a href="https://twitter.com/mnh48com/">Twitter</a></li>
+			<li><a href="https://www.youtube.com/channel/UCnbL8SM08ViV43pZP5UuEhw/">YouTube</a></li>
+			<li><a href="https://mnh48.moe/ms/support/index.html">Bantu Saya</a></li>
+			<li><a href="https://mnh48.moe/ms/contact.html">Hubungi Saya</a></li>
+			<li><a href="https://status.mnh48.com/">Laman Status</a></li>
+		</ul>
+		<ul>
+			<li>
+			Semua logo perkhidmatan luaran ialah hak cipta pemilik masing-masing, kegunaan logo mereka di laman web saya hanyalah untuk memudahkan pengecaman perkhidmatan, perisian atau platform mereka.
+			</li>
+		</ul>
+		{% elsif page.lang == "ms-Arab" %}
+		<ul>
+			<li>&copy; MNH48.moe 2012 - 2018</li>
+			<li><a href="https://jawi.mnh48.com/">لامن ڤريبادي</a></li>
+			<li><a href="https://github.com/MuhdNurHidayat/">ڬيتهاب</a></li>
+			<li><a href="https://twitter.com/mnh48com/">تويتتر</a></li>
+			<li><a href="https://www.youtube.com/channel/UCnbL8SM08ViV43pZP5UuEhw/">يوتيوب</a></li>
+			<li><a href="https://mnh48.moe/ms-Arab/support/index.html">بنتو ساي</a></li>
+			<li><a href="https://mnh48.moe/ms-Arab/contact.html">هوبوڠي ساي</a></li>
+			<li><a href="https://status.mnh48.com/">لامن ستاتوس</a></li>
+		</ul>
+		<ul>
+			<li>
+			سموا لوڬو ڤرخدمتن لواران اياله حق چيڤتا ڤميليك ماسيڠ-ماسيڠ، كڬونأن لوڬو مريك د لامن ويب ساي هاڽله اونتوق ممودهكن ڤڠچمن ڤرخدمتن، ڤرايسين اتاو ڤلاتفورم مريك.
+			</li>
+		</ul>
+		{% elsif page.lang == "ja" %}
+		<ul>
+			<li>&copy; MNH48.moe 2012 - 2018</li>
+			<li><a href="https://ja.mnh48.com/">個人のウェブサイト</a></li>
+			<li><a href="https://github.com/MuhdNurHidayat/">ギットハブ</a></li>
+			<li><a href="https://twitter.com/mnh48com/">ツイッター</a></li>
+			<li><a href="https://www.youtube.com/channel/UCnbL8SM08ViV43pZP5UuEhw/">ユーチューブ</a></li>
+			<li><a href="https://mnh48.moe/ja/support/index.html">寄付する</a></li>
+			<li><a href="https://mnh48.moe/ja/contact.html">連絡する</a></li>
+			<li><a href="https://status.mnh48.com/">状態ページ</a></li>
+		</ul>
+		<ul>
+			<li>
+			外部のサービスロゴは全て所有者の著作権であり、ここでは所有者のサービス、ソフトウェアやプラットフォームを識別のためにロゴを使っていた。
+			</li>
+		</ul>
+		{% elsif page.lang == "zh-Hans" %}
+		<ul>
+			<li>&copy; MNH48.moe 2012 - 2018</li>
+			<li><a href="https://zh.mnh48.com/">个人网站</a></li>
+			<li><a href="https://github.com/MuhdNurHidayat/">GitHub</a></li>
+			<li><a href="https://twitter.com/mnh48com/">推特</a></li>
+			<li><a href="https://www.youtube.com/channel/UCnbL8SM08ViV43pZP5UuEhw/">优兔</a></li>
+			<li><a href="https://mnh48.moe/zh-Hans/support/index.html"></a></li>
+			<li><a href="https://mnh48.moe/zh-Hans/contact.html">捐助</a></li>
+			<li><a href="https://status.mnh48.com/">状态</a></li>
+		</ul>
+		<ul>
+			<li>
+			所有外部服务徽标是各自所有者的版权，在此网站的使用只为了方便大家辨认他们的服务，软件或平台。
+			</li>
+		</ul>
+		{% else %}
+		<ul>
+			<li>&copy; MNH48.moe 2012 - 2018</li>
+			<li><a href="https://en.mnh48.com/">Personal Website</a></li>
+			<li><a href="https://github.com/MuhdNurHidayat/">GitHub</a></li>
+			<li><a href="https://twitter.com/mnh48com/">Twitter</a></li>
+			<li><a href="https://www.youtube.com/channel/UCnbL8SM08ViV43pZP5UuEhw/">YouTube</a></li>
+			<li><a href="https://mnh48.moe/en/support/index.html">Support Me</a></li>
+			<li><a href="https://mnh48.moe/en/contact.html">Contact Me</a></li>
+			<li><a href="https://status.mnh48.com/">Status Page</a></li>
+		</ul>
+		<ul>
+			<li>
+			All the external services logo are copyrights of the respective owners, my use of their logos on my website is only for easier identification of their services, softwares or platforms.
+			</li>
+		</ul>
+		{% endif %}
+		</footer>
+		<script src="{{ "/static/js/scale.fix.js" | relative_url }}"></script>
+	</body>
+	<!--This Jekyll template was written manually by muhdnurhidayat using Notepad++ while referencing a few other websites xD-->
+</html>
